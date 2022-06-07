@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <header>
+          <ul class="city-names">
+            <li class="city"><a href="" class="name-city">Kharkiv</a></li>
+            <li class="city"><a href="" class="name-city">Warsaw</a></li>
+            <li class="city"><a href="" class="name-city">Paris</a></li>
+            <li class="city"><a href="" class="name-city">Berlin</a></li>
+          </ul>
+        </header>
+        <div class="search-form">
+          <form class="left-searching" id="search-form">
+            <input
+              type="search"
+              placeholder="Enter your city"
+              autocomplete="off"
+              id="city-input"
+            />
+            <input
+              type="submit"
+              class="btn btn-primary shadow-sm"
+              value="Search"
+            />
+
+            <button type="button" class="btn btn-secondary">Current</button>
+          </form>
+        </div>
+
+        <h1 id="city">Bydgoszcz</h1>
+        <ul class="additional">
+          <li class="time" id="date"></li>
+          <li class="time" id="sky-value">Cloudy</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix">
+              <img
+                src="src/partly_cloudy.png"
+                class="weather-icons float-left"
+              />
+              <span class="temperature" id="temperature">16</span
+              ><span class="units"
+                ><a href="#" id="celsius">°C </a>|<a href="#" id="fahrenheit"
+                  >°F</a
+                ></span
+              >
+              <div class="float-left"></div>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul class="left-additional">
+              <li class="precipitation" id="precipitation">
+                Precipitation:30%
+              </li>
+              <li class="wind" id="wind">Wind:7km/h</li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="forecast-day">Mon</div>
+              <div class="weather-icon">
+                <img class="sky" src="src/partly_cloudy.png" />
+              </div>
+              <div class="forecast-temperature">18°7°</div>
+            </div>
+            <div class="col-sm-2">
+              <div class="forecast-day">Tue</div>
+              <div class="weather-icon">
+                <img class="sky" src="src/partly_cloudy.png" />
+              </div>
+              <div class="forecast-temperature">20°4°</div>
+            </div>
+            <div class="col-sm-2">
+              <div class="forecast-day">Wed</div>
+              <div class="weather-icon">
+                <img class="sky" src="src/partly_cloudy.png" />
+              </div>
+              <div class="forecast-temperature">22°9°</div>
+            </div>
+            <div class="col-sm-2">
+              <div class="forecast-day">Thu</div>
+              <div class="weather-icon">
+                <img class="sky" src="src/cloudy.png" />
+              </div>
+              <div class="forecast -emperature">19°3°</div>
+            </div>
+            <div class="col-sm-2">
+              <div class="forecast-day">Fri</div>
+              <div class="weather-icon">
+                <img class="sky" src="src/rain_s_cloudy.png" />
+              </div>
+              <div class="forecast-temperature">18°4°</div>
+            </div>
+            <div class="col-sm-2">
+              <div class="forecast-day">Sut</div>
+              <div class="weather-icon">
+                <img class="sky" src="src/rain_s_cloudy.png" />
+              </div>
+              <div class="forecast-temperature">24°11°</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
