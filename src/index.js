@@ -8,7 +8,7 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let dayIndex = date.getDate();
+  let dayIndex = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -58,6 +58,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  console.log(response.data);
 }
 
 function searchCity(city) {
