@@ -24,12 +24,12 @@ function formatDate(date) {
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
+let iconElement = document.querySelector("#icon");
 
-
-let iconElement=document.querySelector('#icon');
-
-iconElement.setAttribute("src", http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png)
-
+iconElement.setAttribute(
+  "src",
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
