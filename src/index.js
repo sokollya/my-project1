@@ -21,6 +21,7 @@ function formatDate(date) {
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
 }
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
@@ -98,3 +99,12 @@ let currentLocationButton = document.querySelector("button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Kharkiv");
+function forecastWeek(week) {
+  let dayIndex = week.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[dayIndex];
+  return `${day}`;
+}
+let forecast = document.querySelector(".forecastDay");
+let currentWeek = new Date(`${([0], [1], [2], [3], [4], [5], [6])}`);
+forecast.innerHTML = forecastWeek(currentWeek);
