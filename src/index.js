@@ -25,6 +25,11 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
+
+let iconElement=document.querySelector('#icon');
+
+iconElement.setAttribute("src", http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png)
+
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -53,8 +58,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#sky-value").innerHTML =
     response.data.weather[0].main;
 
-  document.querySelector("#precipitation").innerHTML =
-    response.data.main.humidity;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
