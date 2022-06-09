@@ -20,6 +20,7 @@ function formatDate(date) {
   ];
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
+  console.log(response.data.main);
 }
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -30,6 +31,7 @@ iconElement.setAttribute(
   "src",
   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 );
+
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
