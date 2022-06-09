@@ -20,7 +20,6 @@ function formatDate(date) {
   ];
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
-  console.log(response.data.main);
 }
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -58,6 +57,14 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   console.log(response.data);
 }
 
