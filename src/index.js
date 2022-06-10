@@ -144,17 +144,28 @@ function getForecast(coordinates) {
   apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-function changeCity(city) {
-  let apiKey = "41a495466476bec4ff42a9430e4f37e4";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+function chooseWarsaw(event) {
+  event.preventDefault();
+  searchCity("warsaw");
+}
+let warsaw = document.querySelector("#warsaw");
+warsaw.addEventListener("click", chooseWarsaw);
+function chooseParis(event) {
+  event.preventDefault();
+  searchCity("paris");
+}
+let paris = document.querySelector("#paris");
+paris.addEventListener("click", chooseParis);
+function chooseBerlin(event) {
+  event.preventDefault();
+  searchCity("berlin");
+}
+let berlin = document.querySelector("#berlin");
+berlin.addEventListener("click", chooseBerlin);
+function chooseKharkiv(event) {
+  event.preventDefault();
+  searchCity("kharkiv");
 }
 
-let Kharkiv = document.querySelector("#Kharkiv");
-Kharkiv.addEventListener("click", changeCity);
-let Warsaw = document.querySelector("#Warsaw");
-Warsaw.addEventListener("click", displayWeatherCondition);
-let Paris = document.querySelector("#Paris");
-Paris.addEventListener("click", changeCity);
-let Berlin = document.querySelector("#Berlin");
-Berlin.addEventListener("click", changeCity);
+let kharkiv = document.querySelector("#kharkiv");
+kharkiv.addEventListener("click", chooseKharkiv);
