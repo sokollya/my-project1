@@ -15,73 +15,83 @@
 
   <body>
     <div class="container">
-      <div class="weather-app">
-        <header>
-          <ul class="city-names">
-            <li class="city">
-              <a href="" class="nameCity" id="Kharkiv">Kharkiv</a>
-            </li>
-            <li class="city">
-              <a href="" class="nameCity" id="Warsaw">Warsaw</a>
-            </li>
-            <li class="city">
-              <a href="" class="nameCity" id="Paris">Paris</a>
-            </li>
-            <li class="city">
-              <a href="" class="nameCity" id="Berlin">Berlin</a>
-            </li>
-          </ul>
-        </header>
-        <div class="search-form">
-          <form class="left-searching" id="search-form">
-            <input
-              type="search"
-              placeholder="Enter your city"
-              autocomplete="off"
-              id="city-input"
-            />
-            <input
-              type="submit"
-              class="btn btn-primary shadow-sm"
-              value="Search"
-            />
-
-            <button type="button" class="btn btn-secondary">Current</button>
-          </form>
-        </div>
-
-        <h1 id="city">Bydgoszcz</h1>
-        <ul class="additional">
-          <li class="time" id="date"></li>
-          <li class="time" id="sky-value">Cloudy</li>
-        </ul>
-
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <img
-                src=""
-                alt="Partly"
-                class="weather-icons float-left"
-                id="icon"
-              />
-              <span class="temperature" id="temperature">16</span
-              ><span class="units"
-                ><a href="#" id="celsius">°C </a>|<a href="#" id="fahrenheit"
-                  >°F</a
-                ></span
-              >
-              <div class="float-left"></div>
-            </div>
-          </div>
-          <div class="col-6">
-            <ul class="left-additional">
-              <li class="humidity">Humidity:<span id="humidity">30</span>%</li>
-              <li class="wind">Wind: <span id="wind">7</span>km/h</li>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <header>
+            <ul class="city-names">
+              <li class="city">
+                <a href="" class="nameCity" id="Kharkiv">Kharkiv</a>
+              </li>
+              <li class="city">
+                <a href="" class="nameCity" id="Warsaw">Warsaw</a>
+              </li>
+              <li class="city">
+                <a href="" class="nameCity" id="Paris">Paris</a>
+              </li>
+              <li class="city">
+                <a href="" class="nameCity" id="Berlin">Berlin</a>
+              </li>
             </ul>
+          </header>
+          <div class="search-form">
+            <form class="left-searching" id="search-form">
+              <input
+                type="search"
+                placeholder="Enter your city"
+                autocomplete="off"
+                id="city-input"
+              />
+              <input
+                type="submit"
+                class="btn btn-primary shadow-sm"
+                value="Search"
+              />
+
+              <button type="button" class="btn btn-secondary">Current</button>
+            </form>
           </div>
-          <div class="weather-forecast" id="forecast"></div>
+
+          <h1 id="city">Bydgoszcz</h1>
+          <ul class="additional">
+            <li class="time" id="date"></li>
+            <li class="time" id="sky-value">Cloudy</li>
+          </ul>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix">
+                <img
+                  src=""
+                  alt="Partly"
+                  class="weather-icons float-left"
+                  id="icon"
+                />
+                <span class="temperature" id="temperature">16</span
+                ><span class="units"
+                  ><a href="#" id="celsius">°C </a>|<a href="#" id="fahrenheit"
+                    >°F</a
+                  ></span
+                >
+                <div class="float-left"></div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul class="left-additional">
+                <li class="humidity">
+                  Humidity:<span id="humidity">30</span>%
+                </li>
+                <li class="wind">Wind: <span id="wind">7</span>km/h</li>
+              </ul>
+            </div>
+            <div class="weather-forecast" id="forecast"></div>
+          </div>
         </div>
+        <small>
+          <a href="https://github.com/sokollya/my-project1" target="_blank"
+            >Open-source code</a
+          >
+          by Yana Sokol
+        </small>
       </div>
     </div>
     <script src="src/index.js"></script>
