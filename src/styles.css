@@ -96,9 +96,17 @@ input[type="submit"],
   font-weight: 400;
   padding: 5px 10px;
 }
-.forecast-day {
+.forecastDay {
   color: #7c7c7c;
+  text-align: center;
 }
-.forecast-temperature {
+.forecastTemperature {
   color: #7c7c7c;
+  text-align: center;
+}
+.min-temperature {
+  opacity: 0.6;
+}
+#forecast-icon {
+  margin-left: 10px;
 }

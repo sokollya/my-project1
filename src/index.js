@@ -22,6 +22,13 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
@@ -65,8 +72,7 @@ function displayWeatherCondition(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  console.log(response.data);
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -99,12 +105,41 @@ let currentLocationButton = document.querySelector("button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Kharkiv");
-function forecastWeek(week) {
-  let dayIndex = week.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let day = days[dayIndex];
-  return `${day}`;
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastHTML = `<div class="row">`;
+  forecastElement = document.querySelector("#forecast");
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+  
+              <div class="col-sm-2">
+                <div class="forecastDay">${formatDay(forecastDay.dt)}</div>
+  
+                  <img id="forecast-icon" src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png" width="58"/>
+               
+                <div class="forecastTemperature">
+                  <span class="max-temperature">${Math.round(
+                    forecastDay.temp.max
+                  )}</span>°<span
+                    class="min-temperature"
+                    >${Math.round(forecastDay.temp.min)}</span
+                  >°
+                </div>
+              </div>`;
+    }
+  });
+  console.log(forecast);
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
-let forecast = document.querySelector(".forecastDay");
-let currentWeek = new Date(`${([0], [1], [2], [3], [4], [5], [6])}`);
-forecast.innerHTML = forecastWeek(currentWeek);
+function getForecast(coordinates) {
+  apiKey = "41a495466476bec4ff42a9430e4f37e4";
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
